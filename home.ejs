@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Injection aatacks</title>
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <a class = "btn-success" href='/sql'>SQL Injection</a>
+  </div>
+  
+
+ 
+
+  <div class="jumbotron text-center">
+
+
+  <a class = "btn-danger" href='/xssinjection'>Xss Injection</a>
+  <p>Cross site scripting attack</p><br/>
+    <form action="/securedxssinjection" method="POST">
+      <label>enter your feedback</label>
+      <input type="text" placeholder="enter your feedback" name="feed" required>
+      <input type="submit">
+    </form>
+    <div class=" text-center m-20">
+    <p><%= errorf%></p>
+    <% if(feeds && feeds.length !== 0) { %>
+      <table>
+        <thead><tr><th>Feddback</th></tr></thead>
+        <tbody>
+          <% feeds.forEach(function(feed){ %>
+          <tr>
+            <td><%= feed.comment%></td>
+          </tr>
+          <% }) %>
+          
+        </tbody>
+      </table>
+      <%}%>
+    </div>
+
+
+</div>
+
+<div class="jumbotron text-center">
+
+  
+  <p>zip file</p><br/>
+    <form action="/zip" method="POST">
+      <label>enter your file</label>
+      <input type="text" placeholder="enter your feedback" name="file" required>
+      <input type="submit">
+    </form>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

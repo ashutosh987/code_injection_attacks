@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Injection aatacks</title>
+</head>
+
+<body>
+<div style="display: flex; justify-content: space-between;">
+  <div style="width: 30%; height: 100%;">
+    <p>SQL Injection</p><br/>
+    <form action="/sqlinjection" method="POST">
+      <label>Search user by name</label>
+      <input type="text" placeholder="search by name" name="user" required>
+      <input type="submit">
+    </form>
+    <p><%= error%></p>
+    <% if(users && users.length !== 0) { %>
+      <table>
+        <thead><tr><th>Name</th><th>Occupation</th></tr></thead>
+        <tbody>
+          <% users.forEach(function(user){ %>
+          <tr>
+            <td><%= user.firstname%> <%= user.lasstname%></td>
+            <td><%= user.loccupation%></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <%}%>
+      
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Theif</title>
+</head>
+
+<body>
+<div >
+  <div >
+    <h2>Stolen Data</h2><br/>
+    <ul>
+    <% if(users && users.length !== 0) { %>
+          <% users.forEach(function(user){ %>
+          <li><%= user.comment%></li>
+          <% }) %>
+      <%}%>
+
+    </ul>
+      
+  </div>
+</body>
+</html>
